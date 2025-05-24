@@ -1,16 +1,169 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>LED 时钟工具</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优质铁路模组</title>
+    <style>
+        :root {
+            --mc-dark: #1d1d18;
+            --mc-green: #4a7a4a;
+            --mc-beige: #c6c6b2;
+            --mc-gold: #ffd700;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Minecraft', monospace;
+        }
+
+        body {
+            margin: 0;
+            background: var(--mc-dark);
+            color: var(--mc-beige);
+            line-height: 1.6;
+        }
+
+        /* 像素风标题 */
+        .pixel-title {
+            font-size: 2.5rem;
+            text-shadow: 3px 3px 0 #000;
+            color: var(--mc-gold);
+            margin: 1rem 0;
+        }
+
+        /* 主视觉区 */
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('mod-bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* 特性卡片 */
+        .feature-card {
+            background: rgba(0,0,0,0.7);
+            border: 3px solid var(--mc-green);
+            padding: 1.5rem;
+            margin: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 下载按钮 */
+        .download-btn {
+            background: var(--mc-green);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 0;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem;
+        }
+
+        .download-btn:hover {
+            background: #3a6a3a;
+        }
+
+        /* 配置要求表格 */
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .requirements-table td {
+            border: 2px solid var(--mc-green);
+            padding: 1rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .pixel-title {
+                font-size: 1.8rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- 引入Minecraft字体 -->
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
 </head>
 <body>
-  <h1>LED 时钟工具合集</h1>
-  <ul class="menu">
-    <li><a href="pages/clock.html">北京时间</a></li>
-    <li><a href="pages/stopwatch.html">秒表</a></li>
-    <li><a href="pages/countdown.html">倒计时</a></li>
-  </ul>
+    <header class="hero">
+        <h1 class="pixel-title">优质铁路</h1>
+        <p>为机械动力添加更多的火车</p>
+        <a href="#download" class="download-btn">立即下载 v1.4.2</a>
+    </header>
+
+    <section class="content-section">
+        <h2 class="pixel-title">模组特色</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>更多火车</h3>
+                <p>C70型敞车，GQ70型罐车</p>
+            </div>
+            <div class="feature-card">
+                <h3>铁路设施与工具</h3>
+                <p>发车铃，鸣笛按钮，道砟</p>
+            </div>
+            <!-- 更多特性卡片... -->
+        </div>
+    </section>
+
+    <section id="download" class="content-section">
+        <h2 class="pixel-title">下载安装</h2>
+        <div class="installation-steps">
+            <div class="step">
+                <h3>▶ 适用版本</h3>
+                <p>Minecraft 1.18.2 / 1.19.2 </p>
+            </div>
+            <div class="step">
+                <h3>📥 安装指南</h3>
+                <ol>
+                    <li>安装Forge加载器</li>
+                    <li>将模组文件放入mods文件夹</li>
+                    <li>启动游戏享受新内容！</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="pixel-title">配置要求</h2>
+        <table class="requirements-table">
+            <tr>
+                <td>最低配置</td>
+                <td>i5-4代 / 8GB内存 / GTX 1050</td>
+            </tr>
+            <tr>
+                <td>推荐配置</td>
+                <td>i5-10代 / 16GB内存 / RTX 2060</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem;">
+        <p>© 2025 优质铁路开发组</p>
+        <div class="social-links">
+            <a href="#">CurseForge</a> • 
+            <a href="#">Modrinth</a> • 
+            <a href="#">GitHub</a>
+        </div>
+    </footer>
 </body>
 </html>
